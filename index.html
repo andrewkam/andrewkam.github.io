@@ -23,13 +23,7 @@
   <header> <a href="">
     <h4 class="logo">DATABASES</h4>
     </a>
-    <nav>
-      <ul>
-        <li><a href="#hero">HOME</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li> <a href="#contact">CONTACT</a></li>
-      </ul>
-    </nav>
+    <nav> </nav>
   </header>
   <!-- Hero Section -->
   <section class="hero" id="hero">
@@ -38,56 +32,57 @@
   <!-- About Section -->
   <section class="about" id="about">
     <h2 class="hidden">About</h2>
-    <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-    <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-    <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+    <p>Founded by Robert Kaye, MusicBrainz has since grown rapidly from a one-man operation to an international community of enthusiasts who appreciate both music and music metadata. Along the way, the scope of the project has expanded from its origins as a mere a CDDB replacement to today, where MusicBrainz has become a true encyclopedia of music.</p>
   </section>
   <!-- Stats Gallery Section -->
   <div class="gallery">
     <div class="thumbnail">
-      <h1 class="stats">1500</h1>
-      <h4>TITLE</h4>
-      <p>One line description</p>
+      <h1 class="stats">1,302,584</h1>
+      <h4>ARTISTS</h4>
     </div>
     <div class="thumbnail">
-      <h1 class="stats">2300</h1>
-      <h4>TITLE</h4>
-      <p>One line description</p>
+      <h1 class="stats">1,930,712</h1>
+      <h4>RELEASES</h4>
     </div>
     <div class="thumbnail">
-      <h1 class="stats">7500</h1>
-      <h4>TITLE</h4>
-      <p>One line description</p>
+      <h1 class="stats">58,143,912</h1>
+      <h4>MBIDS</h4>
     </div>
     <div class="thumbnail">
-      <h1 class="stats">9870</h1>
-      <h4>TITLE</h4>
-      <p>One line description</p>
+      <h1 class="stats">1,925,672</h1>
+      <h4>EDITORS</h4>
     </div>
   </div>
-  <!-- Parallax Section -->
-  <section class="banner">
-    <h2 class="parallax">PARALLAX HERO</h2>
-    <p class="parallax_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-  </section>
-  <!-- More Info Section -->
-  <footer>
-    <article class="footer_column">
-      <h3>ABOUT</h3>
-      <img src="images/placeholder.jpg" alt="" width="400" height="200" class="cards"/>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla </p>
-    </article>
-    <article class="footer_column">
-      <h3>LOCATION</h3>
-      <img src="images/placeholder.jpg" alt="" width="400" height="200" class="cards"/>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla </p>
-    </article>
-  </footer>
-  <!-- Footer Section -->
-  <section class="footer_banner" id="contact">
-    <h2 class="hidden">Footer Banner Section </h2>
-    <p class="hero_header">FOR THE LATEST NEWS &amp; UPDATES</p>
-    <div class="button">subscribe</div>
+  <section class="about" id="main">
+    <h2 class="hidden">Main</h2>
+    <a href="https://musicbrainz.org">MusicBrainz</a>
+    <h3>Overview</h3>
+    <ul>
+    	<li>Community-maintained open source encyclopedia of music information</li>
+    	<li>Anyone allowed to contribute</li>
+    	<li>No discrimination of any type of music over another</li>
+	</ul>
+    <h3>History</h3>
+    <ul>
+    	<li>CDDB, database for applications to query CD information, commercialized in 2000</li>
+    	<li>Founded by Robert Kaye as a replacement</li>
+    	<li>Operated by the MetaBrainz Foundation, a California-based non-profit corporation</li>
+	</ul>
+    <h3>Architecture</h3>
+    <ul>
+    	<li>Database</li>
+    	<ul>
+    		<li>PostgreSQL</li>
+    		<li>Contains all metadata and history</li>
+    		<li><a href="https://musicbrainz.org/doc/MusicBrainz_Database/Schema">Schema</a></li>
+    	</ul>
+    	<li>Application Server</li>
+    	<ul>
+    		<li>Provides main access through <a href="https://musicbrainz.org">website</a></li>
+    		<li>Provides web service</li>
+    	</ul>
+    </ul>
+    	
   </section>
   <!-- Copyrights Section -->
   <div class="copyright">&copy;2015 - <strong>Light Theme</strong></div>
