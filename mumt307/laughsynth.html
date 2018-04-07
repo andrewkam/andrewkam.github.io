@@ -35,12 +35,7 @@ a:active {
 <body>
 <!-- Main Container -->
 
-<div class="container">
-  <section class="about" id="about">
-    <h2 class="hidden">About</h2>
-</section> 
-  
-  <!-- Navigation -->
+<div class="container"> <!-- Navigation -->
   <header> <a href="">
     </a>
     <nav> </nav>
@@ -54,30 +49,21 @@ a:active {
   
   
   <section class="about" id="about">
-    <p>A laugh track, invented by American sound engineer Charles Douglass, is a separate soundtrack for a recorded comedy show containing the sound of audience laughter.</p>
     <h3>History</h3>
     <ul>
     	<p>A laugh track, invented by American sound engineer Charles Douglass, is a separate soundtrack for a recorded comedy show containing the sound of audience laughter. During tapings of early radio and television shows, the performances of the actors and crew could be controlled, but live audiences could not be relied upon to laugh at the correct moments. Douglass extracted laughter and applause from live soundtracks recorded, and then placed the recorded sounds into a huge tape machine. Known as the "laff box", Douglass used a keyboard to select the style, gender and age of the laugh as well as a foot pedal to time the length of the reaction. Inside the machine was a wide array of recorded chuckles, yocks and belly laughs; exactly 320 laughs on 32 tape loops, 10 to a loop. Each loop contained 10 individual audience laughs spliced end-to-end, whirling around simultaneously waiting to be cued up.[13] Since the tapes were looped, laughs were played in the same order repeatedly.</p>
-	</ul>
-    <h3>Architecture</h3>
-    <ul>
-    	<li>Database</li>
-    	<ul>
-    		<li>PostgreSQL</li>
-    		<li>Contains all metadata and history</li>
-    		<li><a href="https://musicbrainz.org/doc/MusicBrainz_Database/Schema">Schema</a></li>
-    	</ul>
-    	<li>Application Server</li>
-    	<ul>
-    		<li>Provides main access through <a href="https://musicbrainz.org">website</a></li>
-    		<li>Provides web service access for clients</li>
-    	</ul>
+   	  <img src="images/laffbox1.jpg" width="468" height="640" alt=""/>
+   	  <img src="images/laffbox2.jpg" width="480" height="640" alt=""/>
     </ul>
-    <h3>Usage</h3>
+    <h3>Purpose</h3>
     <ul>
-    	<li>Contribute via website following <a href="https://musicbrainz.org/doc/Style">guidelines</a></li>
-    	<li>Commit modifications through software clients</li>
+    	<p>My project is intended to replicate the overall sound of a laugh track.</p>
     </ul>
+    <h3>Design</h3>
+    <ul>
+		<h4>Recording</h4>
+  		<p>The recording of a single laugh stream is completed using Max/MSP.</p>
+   	</ul>
     <h3>Software</h3>
     <ul>
 		<li>Media Players/Libraries</li>
