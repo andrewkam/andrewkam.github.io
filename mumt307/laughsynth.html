@@ -57,31 +57,21 @@ a:active {
     </ul>
     <h3>Purpose</h3>
     <ul>
-    	<p>My project is intended to replicate the overall sound of a laugh track, but using only a single recording of my voice. Such a tool could be useful for production effects in both music and sound, as it would construct the sound of a crowd of unsynchornized voices.</p>
+    	<p>My project is intended to replicate the overall sound of a laugh track, but using only a single recording of my voice. Such a tool could be useful for production effects in both music and sound, as it would construct the sound of a crowd of unsynchronized voices.</p>
+    </ul>
+    <h3>Software</h3>
+    <ul>
+		<li>Audacity</li>
+   		<li>MATLAB</li>
     </ul>
     <h3>Design</h3>
     <ul>
 		<h4>Recording</h4>
-  		<p>The recording of a single laugh stream is completed using Max/MSP.</p>
-   	</ul>
-    <h3>Software</h3>
-    <ul>
-		<li>Media Players/Libraries</li>
-   		<ul>
-   			<li>Kodi</li>
-   			<li>VLC</li>
-   			<li>foobar2000</li>
-   			<li>MusicBee</li>
-   		</ul>
-    	<li>Taggers</li>
-    	<ul>
-    		<li>MusicBrainz Picard</li>
-    		<li>Magic MP3 Tagger</li>
-    	</ul>
-    	<li>CD Rippers</li>
-    	<ul>
-    		<li>X Lossless Decoder (XLD)</li>
-    	</ul>
+  		<p>The recording of a single laugh stream is completed using Audacity, as only a clean version of a laugh is required, with no effects.</p>
+  		<h4>Pitch Shift / Time Stretching</h4>
+  		<p>In order to simulate a crowd of laughs, the single laugh is duplicated into multiple streams. The number of streams is configurable. After duplication, each stream is pitch-shifted to a random level, within a range. This is in order to construct a variety of different voices with different tones, both lower and higher. Although this doesn't exactly simulate male and female voices very accurately, it is a rough estimation. The pitch-shifted streams are also time-stretched in order to maintain the same length is the original stream. Both these processes are completed using an implementation of a phase vocoder.</p>
+	  <img src="images/vocoder.jpg" width="706" height="162" alt=""/><br>
+	  <img src="images/vocodercode.jpg" width="597" height="860" alt=""/>
     </ul>
 	</section>
   <!-- Copyrights Section -->
