@@ -59,7 +59,7 @@ a:active {
     <ul>
     	<p>My project is intended to replicate the overall sound of a laugh track, but using only a single recording of my voice. Such a tool could be useful for production effects in both music and sound, as it would construct the sound of a crowd of unsynchronized voices.</p>
     </ul>
-    <h3>Software</h3>
+    <h3>Tools</h3>
     <ul>
 		<li>Audacity</li>
    		<li>MATLAB</li>
@@ -67,12 +67,16 @@ a:active {
     <h3>Design</h3>
     <ul>
 		<h4>Recording</h4>
-  		<p>The recording of a single laugh stream is completed using Audacity, as only a clean version of a laugh is required, with no effects.</p>
-  		<img src="images/waveformorig.jpg" width="708" height="127" alt=""/>
-<h4>Pitch Shift / Time Stretching</h4>
-  		<p>In order to simulate a crowd of laughs, the single laugh is duplicated into multiple streams. The number of streams is configurable. After duplication, each stream is pitch-shifted to a random level, within a range. This is in order to construct a variety of different voices with different tones, both lower and higher. Although this doesn't exactly simulate male and female voices very accurately, it is a rough estimation. The pitch-shifted streams are also time-stretched in order to maintain the same length is the original stream. Both these processes are completed using an implementation of a phase vocoder.</p>
-	  <img src="images/vocoder.jpg" width="650" height="149" alt=""/><br>
-	  <img src="images/vocodercode.jpg" width="597" height="860" alt=""/>
+			<p>The recording of a single laugh stream is completed using Audacity, as only a clean version of a laugh is required, with no effects.</p>
+			<img src="images/waveformorig.jpg" width="708" height="127" alt=""/>
+		<h4>Pitch Shift / Time Stretching</h4>
+			<p>In order to simulate a crowd of laughs, the single laugh is duplicated into multiple streams. The number of streams is configurable. After duplication, each stream is pitch-shifted to a random level, within a range. This is in order to construct a variety of different voices with different tones, both lower and higher. Although this doesn't exactly simulate male and female voices very accurately, it is a rough estimation. The pitch-shifted streams are also time-stretched in order to maintain the same length is the original stream. Both these processes are completed using an implementation of a phase vocoder.</p>
+		  	<img src="images/vocoder.jpg" width="650" height="149" alt=""/><br>
+		  	<img src="images/vocodercode.jpg" width="597" height="860" alt=""/>
+		<h4>Silence Removal</h4>
+   			<p>Upon recording, there will inevitably by a short period of silence at the beginning of the audio file. This file needs to be detected and removed from the audio signal in order for future modifications to work effectively. This was completed using the 'TrimStart' extraction option of the <i>miraudio</i> operator in the MIRtoolbox.</p>
+   			<img src="images/silencecode.jpg" width="450" height="143" alt=""/><br>
+	  		<img src="images/silence.jpg" width="800" height="481" alt=""/>
     </ul>
 	</section>
   <!-- Copyrights Section -->
