@@ -77,6 +77,8 @@ a:active {
    			<p>Upon recording, there will inevitably by a short period of silence at the beginning of the audio file. This file needs to be detected and removed from the audio signal in order for future modifications to work effectively. This was completed using the 'TrimStart' extraction option of the <i>miraudio</i> operator in the MIRtoolbox.</p>
    			<img src="images/silencecode.jpg" width="450" height="143" alt=""/><br>
 	  <img src="images/silence.jpg" width="804" height="522" alt=""/>
+	  <h4>Segmentation</h4>
+	  <p>People have different and unique patterns of laughing. The temporal envelope of each laughing burst, or grain, varies for different people in the overall laughing stream. I attempt to mimic these variations by shuffling around the laughing bursts of each of the pitch-shifted streams. The onsets of each burst is calculated using the 'Valleys' option of the <i>mirpeaks</i> operator in the MIRtoolbox. These onset indices are stored as indicators of the start of each segment. These are then used to randomly shuffle each segement of each stream. However, the last segment is left in its position, as it was found that altering this last laughing burst would cause the overall stream to end abruptly.</p>
     </ul>
 	</section>
   <!-- Copyrights Section -->
