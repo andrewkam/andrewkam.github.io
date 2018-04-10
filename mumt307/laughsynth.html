@@ -71,15 +71,27 @@ a:active {
 			<img src="images/waveformorig.jpg" width="708" height="127" alt=""/>
 		<h4>Pitch Shift / Time Stretching</h4>
 			<p>In order to simulate a crowd of laughs, the single laugh is duplicated into multiple streams. The number of streams is configurable. After duplication, each stream is pitch-shifted to a random level, within a range. This is in order to construct a variety of different voices with different tones, both lower and higher. Although this doesn't exactly simulate male and female voices very accurately, it is a rough estimation. The pitch-shifted streams are also time-stretched in order to maintain the same length is the original stream. Both these processes are completed using an implementation of a phase vocoder.</p>
+	  		<h5>Vocoder Flow Diagram</h5>
 		  	<img src="images/vocoder.jpg" width="650" height="149" alt=""/><br>
+		  	<h5>MATLAB Code</h5>
 		  	<img src="images/vocodercode.jpg" width="597" height="860" alt=""/>
 		<h4>Silence Removal</h4>
    			<p>Upon recording, there will inevitably by a short period of silence at the beginning of the audio file. This file needs to be detected and removed from the audio signal in order for future modifications to work effectively. This was completed using the 'TrimStart' extraction option of the <i>miraudio</i> operator in the MIRtoolbox.</p>
+   			<h5>MATLAB Code</h5>
    			<img src="images/silencecode.jpg" width="450" height="143" alt=""/><br>
-	  <img src="images/silence.jpg" width="804" height="522" alt=""/>
-	  <h4>Segmentation</h4>
-	  <p>People have different and unique patterns of laughing. The temporal envelope of each laughing burst, or grain, varies for different people in the overall laughing stream. I attempt to mimic these variations by shuffling around the laughing bursts of each of the pitch-shifted streams. The onsets of each burst is calculated using the 'Valleys' option of the <i>mirpeaks</i> operator in the MIRtoolbox. These onset indices are stored as indicators of the start of each segment. These are then used to randomly shuffle each segement of each stream. However, the last segment is left in its position, as it was found that altering this last laughing burst would cause the overall stream to end abruptly.</p>
+   			<h5>Silence Detection</h5>
+	  		<img src="images/silence.jpg" width="804" height="522" alt=""/>
+		<h4>Segmentation</h4>
+		  <p>People have different and unique patterns of laughing. The temporal envelope of each laughing burst, or grain, varies for different people in the overall laughing stream. I attempt to mimic these variations by shuffling around the laughing bursts of each of the pitch-shifted streams. The onsets of each burst is calculated using the 'Valleys' option of the <i>mirpeaks</i> operator in the MIRtoolbox. These onset indices are stored as indicators of the start of each segment. These are then used to randomly shuffle each segement of each stream. However, the last segment is left in its position, as it was found that altering this last laughing burst would cause the overall stream to end abruptly.</p>
+		<h5>MATLAB Code</h5>
+		  <img src="images/onsetcode.jpg" width="397" height="211" alt=""/><br>
+		  <h5>Valley Detection</h5>
+		  <img src="images/valleys.jpg" width="745" height="586" alt=""/><br>
+		  <h5>Resulting Segment Shuffle</h5>
+		  <img src="images/streams.jpg" width="1500" height="1191" alt=""/>
+	  
     </ul>
+    
 	</section>
   <!-- Copyrights Section -->
   <div class="copyright">&copy;2015 - <strong>Light Theme</strong></div>
