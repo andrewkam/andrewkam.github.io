@@ -38,72 +38,78 @@ a:active {
 <div class="container"> <!-- Navigation -->
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <h2 class="hero_header">Laugh Track Synth</h2>
+    <h2 class="hero_header">Laugh Track Synth</h2><br>
+    <h4 class="hero_header">Andrew Kam</h4>
+    <h4 class="hero_header">MUMT 307 - Winter 2018</h4>
   </section>
   <!-- About Section -->
   <!-- Stats Gallery Section -->
   
   
   <section class="about" id="about">
-    <h3>History</h3>
+    <h2>History</h2>
     <ul>
     	<p>A laugh track, invented by American sound engineer Charles Douglass, is a separate soundtrack for a recorded comedy show containing the sound of audience laughter. During tapings of early radio and television shows, the performances of the actors and crew could be controlled, but live audiences could not be relied upon to laugh at the correct moments. Douglass extracted laughter and applause from live soundtracks recorded, and then placed the recorded sounds into a huge tape machine. Known as the "laff box", Douglass used a keyboard to select the style, gender and age of the laugh as well as a foot pedal to time the length of the reaction. Inside the machine was a wide array of recorded chuckles, yocks and belly laughs; exactly 320 laughs on 32 tape loops, 10 to a loop. Each loop contained 10 individual audience laughs spliced end-to-end, whirling around simultaneously waiting to be cued up. Since the tapes were looped, laughs were played in the same order repeatedly.</p>
    	  <img src="images/laffbox1.jpg" width="468" height="640" alt=""/>
    	  <img src="images/laffbox2.jpg" width="480" height="640" alt=""/>
     </ul>
-    <h3>Purpose</h3>
+    <h2>Purpose</h2>
     <ul>
     	<p>My project is intended to replicate the overall sound of a laugh track, but using only a single recording of my voice. Such a tool could be useful for production effects in both music and sound, as it would construct the sound of a crowd of unsynchronized voices.</p>
     </ul>
-    <h3>Tools</h3>
+    <h2>Tools</h2>
     <ul>
 		<li>Audacity</li>
    		<li>MATLAB</li>
     </ul>
-    <h3>Design</h3>
+    <h2>Design</h2>
     <ul>
-		<h4>Recording</h4>
-			<p>The recording of a single laugh stream is completed using Audacity, as only a clean version of a laugh is required, with no effects.</p>
+      <h3>Recording</h3>
+      <p>The recording of a single laugh stream is completed using Audacity, as only a clean version of a laugh is required, with no effects.</p>
 			<img src="images/waveformorig.jpg" width="708" height="127" alt=""/>
-		<h4>Pitch Shift / Time Stretching</h4>
+			<h3>Pitch Shift / Time Stretching</h3>
 			<p>In order to simulate a crowd of laughs, the single laugh is duplicated into multiple streams. The number of streams is configurable. After duplication, each stream is pitch-shifted to a random level, within a range. This is in order to construct a variety of different voices with different tones, both lower and higher. Although this doesn't exactly simulate male and female voices very accurately, it is a rough estimation. The pitch-shifted streams are also time-stretched in order to maintain the same length is the original stream. Both these processes are completed using an implementation of a phase vocoder.</p>
 	  		<h5>Vocoder Flow Diagram</h5>
 		  	<img src="images/vocoder.jpg" width="650" height="149" alt=""/><br>
 		  	<h5>MATLAB Code</h5>
 		  	<img src="images/vocodercode.jpg" width="597" height="860" alt=""/>
-		<h4>Silence Removal</h4>
-   			<p>Upon recording, there will inevitably by a short period of silence at the beginning of the audio file. This file needs to be detected and removed from the audio signal in order for future modifications to work effectively. This was completed using the 'TrimStart' extraction option of the <i>miraudio</i> operator in the MIRtoolbox.</p>
+		  	<h3>Silence Removal</h3>
+		  	<p>Upon recording, there will inevitably by a short period of silence at the beginning of the audio file. This file needs to be detected and removed from the audio signal in order for future modifications to work effectively. This was completed using the 'TrimStart' extraction option of the <i>miraudio</i> operator in the MIRtoolbox.</p>
    			<h5>MATLAB Code</h5>
    			<img src="images/silencecode.jpg" width="450" height="143" alt=""/><br>
    			<h5>Silence Detection</h5>
 	  		<img src="images/silence.jpg" width="804" height="522" alt=""/>
-		<h4>Segmentation</h4>
-		  	<p>People have different and unique patterns of laughing. The temporal envelope of each laughing burst, or grain, varies for different people in the overall laughing stream. I attempt to mimic these variations by shuffling around the laughing bursts of each of the pitch-shifted streams. The onsets of each burst is calculated using the 'Valleys' option of the <i>mirpeaks</i> operator in the MIRtoolbox. These onset indices are stored as indicators of the start of each segment. These are then used to randomly shuffle each segement of each stream. However, the last segment is left in its position, as it was found that altering this last laughing burst would cause the overall stream to end abruptly.</p>
+	  		<h3>Segmentation</h3>
+	  		<p>People have different and unique patterns of laughing. The temporal envelope of each laughing burst, or grain, varies for different people in the overall laughing stream. I attempt to mimic these variations by shuffling around the laughing bursts of each of the pitch-shifted streams. The onsets of each burst is calculated using the 'Valleys' option of the <i>mirpeaks</i> operator in the MIRtoolbox. These onset indices are stored as indicators of the start of each segment. These are then used to randomly shuffle each segement of each stream. However, the last segment is left in its position, as it was found that altering this last laughing burst would cause the overall stream to end abruptly.</p>
 			<h5>MATLAB Code</h5>
 			<img src="images/onsetcode.jpg" width="397" height="211" alt=""/><br>
 			<h5>Valley Detection</h5>
 			<img src="images/valleys.jpg" width="745" height="586" alt=""/><br>
 			<h5>Resulting Segment Shuffle</h5>
 			<img src="images/streams.jpg" width="1500" height="1191" alt=""/><br>
+			<h5>Combined Streams</h5>
 		<img src="images/combinedstreams.jpg" width="743" height="662" alt=""/>
-<h4>Reverberation</h4>
-			<p>In a sitcom taping with a live audience, a studio is used to contain both the live set, actors, and the crowd. Thus, the recording of laughter is completed in a medium to large sized room. In order to create the effect of this environment, the impulse response of an auditorium was downloaded from the <a href="http://www.openairlib.net">Open AIR Library</a>. This impulse was then convolved with the laughter streams. The result was a convincing reverb.</p>
+		<h3>Reverberation</h3>
+		<p>In a sitcom taping with a live audience, a studio is used to contain both the live set, actors, and the crowd. Thus, the recording of laughter is completed in a medium to large sized room. In order to create the effect of this environment, the impulse response of an auditorium was downloaded from the <a href="http://www.openairlib.net">Open AIR Library</a>. This impulse was then convolved with the laughter streams. The result was a convincing reverb.</p>
 			<h5>Central Hall, University of York</h5>
 	  		<img src="images/auditorium1.jpg" width="602" height="400" alt=""/>
 	  		<img src="images/auditorium2.jpg" width="563" height="400" alt=""/>
 	  		<img src="images/impulse.jpg" width="494" height="400" alt=""/>
-	  	<h4>Other Effects and Modifications</h4>
+	  		<h3>Other Effects and Modifications</h3>
 	  		<h5>Chorus</h5>
 	  		<p>A chorus effect was applied to each laugh stream in order to create a richer overall sound. This was completed using the <i>audioexample.Chrous</i> method in the Audio System Toolbox in MATLAB. A delay of 0.05s and wet/dry ratio of 0.6 was found to be suitable.</p>
 	  		<h5>Amplitude</h5>
 	  		<p>The amplitudes of each stream was randomly varied in order to create the effect of louder and quieter voices.</p>
 	  		<h5>Delay</h5>
 	  		<p>Slight delays were randomly assigned to streams in order to increase the perception of multiple voices.</p>
+	  	<h2>Results</h2>
+	  	<p>The result of all the combined stream duplications, segmentation, and effects described above produced a very good laugh track. You will most likely laugh along.</p>
+  	  <img src="images/laughtrack.jpg" width="748" height="394" alt=""/>
     </ul>
     
 	</section>
   <!-- Copyrights Section -->
-  <div class="copyright">&copy;2015 - <strong>Light Theme</strong></div>
+  <!-- <div class="copyright">&copy;2015 - <strong>Light Theme</strong></div> -->
 </div>
 <!-- Main Container Ends -->
 </body>
