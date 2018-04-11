@@ -36,10 +36,6 @@ a:active {
 <!-- Main Container -->
 
 <div class="container"> <!-- Navigation -->
-  <header> <a href="">
-    </a>
-    <nav> </nav>
-  </header>
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <h2 class="hero_header">Laugh Track Synth</h2>
@@ -82,14 +78,27 @@ a:active {
    			<h5>Silence Detection</h5>
 	  		<img src="images/silence.jpg" width="804" height="522" alt=""/>
 		<h4>Segmentation</h4>
-		  <p>People have different and unique patterns of laughing. The temporal envelope of each laughing burst, or grain, varies for different people in the overall laughing stream. I attempt to mimic these variations by shuffling around the laughing bursts of each of the pitch-shifted streams. The onsets of each burst is calculated using the 'Valleys' option of the <i>mirpeaks</i> operator in the MIRtoolbox. These onset indices are stored as indicators of the start of each segment. These are then used to randomly shuffle each segement of each stream. However, the last segment is left in its position, as it was found that altering this last laughing burst would cause the overall stream to end abruptly.</p>
-		<h5>MATLAB Code</h5>
-		  <img src="images/onsetcode.jpg" width="397" height="211" alt=""/><br>
-		  <h5>Valley Detection</h5>
-		  <img src="images/valleys.jpg" width="745" height="586" alt=""/><br>
-		  <h5>Resulting Segment Shuffle</h5>
-		  <img src="images/streams.jpg" width="1500" height="1191" alt=""/>
-	  
+		  	<p>People have different and unique patterns of laughing. The temporal envelope of each laughing burst, or grain, varies for different people in the overall laughing stream. I attempt to mimic these variations by shuffling around the laughing bursts of each of the pitch-shifted streams. The onsets of each burst is calculated using the 'Valleys' option of the <i>mirpeaks</i> operator in the MIRtoolbox. These onset indices are stored as indicators of the start of each segment. These are then used to randomly shuffle each segement of each stream. However, the last segment is left in its position, as it was found that altering this last laughing burst would cause the overall stream to end abruptly.</p>
+			<h5>MATLAB Code</h5>
+			<img src="images/onsetcode.jpg" width="397" height="211" alt=""/><br>
+			<h5>Valley Detection</h5>
+			<img src="images/valleys.jpg" width="745" height="586" alt=""/><br>
+			<h5>Resulting Segment Shuffle</h5>
+			<img src="images/streams.jpg" width="1500" height="1191" alt=""/><br>
+		<img src="images/combinedstreams.jpg" width="743" height="662" alt=""/>
+<h4>Reverberation</h4>
+			<p>In a sitcom taping with a live audience, a studio is used to contain both the live set, actors, and the crowd. Thus, the recording of laughter is completed in a medium to large sized room. In order to create the effect of this environment, the impulse response of an auditorium was downloaded from the <a href="http://www.openairlib.net">Open AIR Library</a>. This impulse was then convolved with the laughter streams. The result was a convincing reverb.</p>
+			<h5>Central Hall, University of York</h5>
+	  		<img src="images/auditorium1.jpg" width="602" height="400" alt=""/>
+	  		<img src="images/auditorium2.jpg" width="563" height="400" alt=""/>
+	  		<img src="images/impulse.jpg" width="494" height="400" alt=""/>
+	  	<h4>Other Effects and Modifications</h4>
+	  		<h5>Chorus</h5>
+	  		<p>A chorus effect was applied to each laugh stream in order to create a richer overall sound. This was completed using the <i>audioexample.Chrous</i> method in the Audio System Toolbox in MATLAB. A delay of 0.05s and wet/dry ratio of 0.6 was found to be suitable.</p>
+	  		<h5>Amplitude</h5>
+	  		<p>The amplitudes of each stream was randomly varied in order to create the effect of louder and quieter voices.</p>
+	  		<h5>Delay</h5>
+	  		<p>Slight delays were randomly assigned to streams in order to increase the perception of multiple voices.</p>
     </ul>
     
 	</section>
