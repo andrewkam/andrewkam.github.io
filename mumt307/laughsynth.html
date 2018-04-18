@@ -66,7 +66,7 @@ a:active {
     <ul>
       <h3>Recording</h3>
       <p>The recording of a single laugh stream is completed using Audacity, as only a clean version of a laugh is required, with no effects. After recording, it must be ensured that there is no clipping and no unwanted noise or sounds that could affect the detection algorithm. Below is an example clean recording of a laugh:</p>
-			<img src="images/waveformorig.jpg" width="708" height="127" alt=""/>
+			<a href="https://andrewkam.github.io/mumt307/source/laugh_copy.wav"><img src="images/waveformorig.jpg" width="708" height="127" alt=""/></a>
 			<h3>Pitch Shift / Time Stretching</h3>
 			<p>In order to simulate a crowd of laughs, the single laugh is duplicated into multiple streams. The number of streams is configurable. After duplication, each stream is pitch-shifted to a random level, within a range. This is in order to construct a variety of different voices with different tones, both lower and higher. Although this doesn't exactly simulate male and female voices very accurately, it is a rough estimation. The pitch-shifted streams are also time-stretched in order to maintain the same length is the original stream. Both these processes are completed using an implementation of a phase vocoder.</p>
   			<p>The phase vocoder performs a short-time FFT and then an inverse short-time FFT. In order to time-stretch the signal, a larger hop size for the overlap-add operation in the synthesis section is used relative to the analysis section. This produces more samples at the output than the input. Thus, the signal can be pitch-shifted by playing it at a higher sampling rate, producing a higher pitch of the signal of equal length.</p>
@@ -115,7 +115,7 @@ a:active {
   	  	<p>It was desired to modify the original audio to simulate the laughter of both male and female voices. It was found that pitch-shifting worked ok when decreasing the pitch, but increasing it of any great length only made my voice sound sqeaky. Altering a male voice to sound female, or vice versa, is very difficult, and pitch-shifting was not successful in doing so. However, since there are so many streams layered on top of each other, it is difficult to hear this limitation.</p>
   	  	<p>As previously mentioned, my the onsets of own laugh was easy to detect using the 'Valley' functionality. If a more continuous laugh is used, the onsets may not be successfully detected.</p>
   	  	<h2>Code</h2>
-  	  	<p>A zip of all the MATLAB code, with impulse response file and sample audio input file can be downloaded <a href="https://andrewkam.github.io/mumt307/sources/final_project_andrewkam.zip">here</a>.</p>
+  	  	<p>A zip of all the MATLAB code, with impulse response file and sample audio input file can be downloaded <a href="https://andrewkam.github.io/mumt307/source/final_project_andrewkam.zip">here</a>.</p>
   	  	<h2>Execution Procedure</h2>
   	  	<p>Laugh synth can be run by calling the laughSynth function in MATLAB with the following parameters:<br><br>
   	  	&emsp;inputAudio = input audio filename<br>
@@ -124,8 +124,8 @@ a:active {
 		&emsp;reverbFlag = 0 to disable reverb, 1 to enable reverb</p>
  	  	<p>For example, the following takes in the audio file 'laugh.wav' with sampling frequency 44100, creates 20 streams, does not add reverb, and returns an array containing the resulting laugh track signal:<br><br>
  	  	&emsp;outputAudio = laughSynth('laugh.wav', 44100, 20, 0);</p>
- 	  	<p>The ouput audio array can be played using the soundsc function, or any other function that plays audio from an array. The file <a href="https://andrewkam.github.io/mumt307/sources/IRauditorium.wav">IRauditorium.wav</a> is required to be in the same directory in order to add reverb.</p>
- 	  	<p>A sample input audio laugh file can be downloaded <a href="https://andrewkam.github.io/mumt307/sources/laugh.wav">here</a>.</p>
+ 	  	<p>The ouput audio array can be played using the soundsc function, or any other function that plays audio from an array. The file <a href="https://andrewkam.github.io/mumt307/source/IRauditorium.wav">IRauditorium.wav</a> is required to be in the same directory in order to add reverb.</p>
+ 	  	<p>A sample input audio laugh file can be downloaded <a href="https://andrewkam.github.io/mumt307/source/laugh.wav">here</a>.</p>
   	  	<h2>References</h2>
   	  	<p>Armstrong, Jennifer Keishin. 2016. "Where Does Canned Laughter Come From - And Where Did It Go?" Last modified 26 September 2016. http://www.bbc.com/culture/story/20160926-where-does-canned-laughter-come-from-and-where-did-it-go.</p>
   	  	<p>MathWorks. "Pitch Shifting and Time Dilation Using a Phase Vocoder in MATLAB." https://www.mathworks.com/help/audio/examples/pitch-shifting-and-time-dilation-using-a-phase-vocoder-in-matlab.html.</p>
