@@ -49,7 +49,7 @@ a:active {
   <section class="about" id="about">
     <h2>History</h2>
     <ul>
-    	<p>A laugh track, invented by American sound engineer Charles Douglass, is a separate soundtrack for a recorded comedy show containing the sound of audience laughter. During tapings of early radio and television shows, the performances of the actors and crew could be controlled, but live audiences could not be relied upon to laugh at the correct moments. Douglass extracted laughter and applause from live soundtracks recorded, and then placed the recorded sounds into a huge tape machine. Known as the "laff box", Douglass used a keyboard to select the style, gender and age of the laugh as well as a foot pedal to time the length of the reaction. Inside the machine was a wide array of recorded chuckles, yocks and belly laughs; exactly 320 laughs on 32 tape loops, 10 to a loop. Each loop contained 10 individual audience laughs spliced end-to-end, whirling around simultaneously waiting to be cued up. Since the tapes were looped, laughs were played in the same order repeatedly.</p>
+    	<p>A laugh track, invented by American sound engineer Charles Douglass, is a separate soundtrack for a recorded comedy show containing the sound of audience laughter. During tapings of early radio and television shows, the performances of the actors and crew could be controlled, but live audiences could not be relied upon to laugh at the correct moments. Douglass extracted laughter and applause from live soundtracks recorded, and then placed the recorded sounds into a tape machine known as the "laff box". Douglass used a keyboard to select the style, gender and age of the laugh as well as a foot pedal to time the length of the reaction. Inside the machine were 320 different laughs on 32 tape loops, 10 to a loop. Since the tapes were looped, laughs were played in the same order repeatedly.</p>
    	  <img src="images/laffbox1.jpg" width="468" height="640" alt=""/>
    	  <img src="images/laffbox2.jpg" width="480" height="640" alt=""/>
     </ul>
@@ -115,9 +115,17 @@ a:active {
   	  	<p>It was desired to modify the original audio to simulate the laughter of both male and female voices. It was found that pitch-shifting worked ok when decreasing the pitch, but increasing it of any great length only made my voice sound sqeaky. Altering a male voice to sound female, or vice versa, is very difficult, and pitch-shifting was not successful in doing so. However, since there are so many streams layered on top of each other, it is difficult to hear this limitation.</p>
   	  	<p>As previously mentioned, my the onsets of own laugh was easy to detect using the 'Valley' functionality. If a more continuous laugh is used, the onsets may not be successfully detected.</p>
   	  	<h2>Code</h2>
-  	  	<p>A zip of all the MATLAB code can be downloaded here.</p>
+  	  	<p>A zip of all the MATLAB code, with impulse response file and sample audio input file can be downloaded <a href="https://andrewkam.github.io/mumt307/sources/final_project_andrewkam.zip">here</a>.</p>
   	  	<h2>Execution Procedure</h2>
-  	  	<p>This is how you run it.</p>
+  	  	<p>Laugh synth can be run by calling the laughSynth function in MATLAB with the following parameters:<br><br>
+  	  	&emsp;inputAudio = input audio filename<br>
+		&emsp;sampleRate = sampling frequency<br>
+		&emsp;streamCount = number of streams to create<br>
+		&emsp;reverbFlag = 0 to disable reverb, 1 to enable reverb</p>
+ 	  	<p>For example, the following takes in the audio file 'laugh.wav' with sampling frequency 44100, creates 20 streams, does not add reverb, and returns an array containing the resulting laugh track signal:<br><br>
+ 	  	&emsp;outputAudio = laughSynth('laugh.wav', 44100, 20, 0);</p>
+ 	  	<p>The ouput audio array can be played using the soundsc function, or any other function that plays audio from an array. The file <a href="https://andrewkam.github.io/mumt307/sources/IRauditorium.wav">IRauditorium.wav</a> is required to be in the same directory in order to add reverb.</p>
+ 	  	<p>A sample input audio laugh file can be downloaded <a href="https://andrewkam.github.io/mumt307/sources/laugh.wav">here</a>.</p>
   	  	<h2>References</h2>
   	  	<p>Armstrong, Jennifer Keishin. 2016. "Where Does Canned Laughter Come From - And Where Did It Go?" Last modified 26 September 2016. http://www.bbc.com/culture/story/20160926-where-does-canned-laughter-come-from-and-where-did-it-go.</p>
   	  	<p>MathWorks. "Pitch Shifting and Time Dilation Using a Phase Vocoder in MATLAB." https://www.mathworks.com/help/audio/examples/pitch-shifting-and-time-dilation-using-a-phase-vocoder-in-matlab.html.</p>
